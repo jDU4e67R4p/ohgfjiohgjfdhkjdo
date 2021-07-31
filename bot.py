@@ -178,7 +178,7 @@ async def serverinfo(ctx):
     voice_channels = len(ctx.guild.voice_channels)
     categories = len(ctx.guild.categories)
     members = len(ctx.guild.members)
-    embed = discord.Embed(title = 'Информация о сервере:', description = f'Назва сервера: `{ctx.guild.name}`\nАйди сервера: `{ctx.guild.id}`\nВсего участников: `{members}`\nВсего каналов и категорий: `{channels}`\nТекстовые каналы: `{text_channels}`\nГолосовые каналы: `{voice_channels}`\nКатегорий: `{categories}`', colour= 0x04ff00)
+    embed = discord.Embed(title = 'Информация о сервере:', description = f'Название сервера: `{ctx.guild.name}`\nАйди сервера: `{ctx.guild.id}`\nВсего участников: `{members}`\nВсего каналов и категорий: `{channels}`\nТекстовые каналы: `{text_channels}`\nГолосовые каналы: `{voice_channels}`\nКатегорий: `{categories}`', colour= 0x04ff00)
     await ctx.send( embed=embed )
 
 # Статистика каналов
