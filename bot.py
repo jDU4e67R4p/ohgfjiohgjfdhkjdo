@@ -1,4 +1,4 @@
-# HiManBot Copyright 2021 By Zan4eg#5557
+# PWNZ Copyright 2021 By Zan4eg#5557
 # Импорты библиотек
 
 import discord
@@ -35,16 +35,16 @@ def get_random_string(length):
 # При загрузке бота
 @Bot.event
 async def on_ready():
-    activity = discord.Game(name = "HiManBot | .help", url='https://twitch.com/zan4egpayne')
+    activity = discord.Game(name = "PWNZ | .help", url='https://twitch.com/zan4egpayne')
     await Bot.change_presence( status = discord.Status.online, activity = activity )
-    print("Logged in as HiManBot!")
-    print("HiManBot Copyright 2021 By Zan4eg#5557")
+    print("Logged in as PWNZ!")
+    print("PWNZ Copyright 2021 By Zan4eg#5557")
     print("Бот запущен и готов к работе!")
     while True:
         await asyncio.sleep(8)
-        await Bot.change_presence( status = discord.Status.online, activity = discord.Game(name = ".help | HiManBot") )
+        await Bot.change_presence( status = discord.Status.online, activity = discord.Game(name = ".help | PWNZ") )
         await asyncio.sleep(8)
-        await Bot.change_presence( status = discord.Status.online, activity = discord.Game(name = "Бот создан специально для сервера HiMan'a") )
+        await Bot.change_presence( status = discord.Status.online, activity = discord.Game(name = "Бот создан специально для сервера PWNZ'a") )
         await asyncio.sleep(8)
         await Bot.change_presence( status = discord.Status.online, activity = discord.Game(name = "Бот создан Zan4eg#5557") )
 
@@ -64,7 +64,7 @@ async def suggest( ctx, *, suggest = None):
         emb=discord.Embed( title = '', colour= 0x04ff00 )
         emb.set_author(name=ctx.author.name + "#" + ctx.author.discriminator + ", отправил своё улучшение!", icon_url = ctx.author.avatar_url)
         emb.add_field( name = 'Текст идеи:', value = '** ```{}``` **'.format( suggest ) )
-        emb.set_footer(text= "© HiMan Bot 💚 | Идеи")
+        emb.set_footer(text= "© PWNZ Bot 💚 | Идеи")
         emb.timestamp = datetime.datetime.utcnow()
         message = await channel.send(embed=emb)
         await message.add_reaction('✅')
@@ -75,11 +75,11 @@ async def suggest( ctx, *, suggest = None):
 # Закрытие канала
 @Bot.command( pass_context=True )
 async def close(ctx):
-    role = discord.utils.get(ctx.guild.roles, id=846102269551837225)
+    role = discord.utils.get(ctx.guild.roles, id=870960033578508299)
     if role not in ctx.author.roles:
         await ctx.send(":x: | Вы не состоите в **Support Team**!")
     else:
-        if ctx.channel.category.id == 846102748713844736 and ctx.channel.name != 'обращение-close':
+        if ctx.channel.category.id == 870960366388129842 and ctx.channel.name != 'обращение-close':
             member = await Bot.fetch_user(ctx.channel.name)
             await ctx.channel.set_permissions(member, send_messages=False,read_messages=True)
             await ctx.send(f"{member.mention}, **саппорт {ctx.author.mention} установил вашему обращению статус: 'Закрыто'**")
@@ -102,19 +102,19 @@ async def close(ctx):
 async def on_message(message):
     await Bot.process_commands(message)
     channel = message.channel
-    support_channel = Bot.get_channel(844901971424706597)
+    support_channel = Bot.get_channel(870960257613066251)
     isBot = message.author.bot
     if(message.author.bot): return
     if(channel != support_channel): return
     await message.delete()
     guild = message.guild
-    channel2 = await guild.get_channel(846102748713844736).create_text_channel(message.author.id)
+    channel2 = await guild.get_channel(870960366388129842).create_text_channel(message.author.id)
     await channel2.set_permissions(message.author, read_messages=True,send_messages=True)
     emb=discord.Embed( title = '', colour= 0x04ff00 )
     emb.set_author(name="Обращение к команде поддержки")
     emb.set_footer(text=f"{message.author.display_name}", icon_url = message.author.avatar_url)
     emb.add_field( name = 'Суть обращения:', value = '{}'.format(message.content) )
-    await channel2.send(message.author.mention+", **`для команды поддержки`** `<@&846102269551837225>`")
+    await channel2.send(message.author.mention+", **`для команды поддержки`** <@&870960033578508299>")
     await channel2.send(embed=emb)
     #message2 = await channel.send(message.author.mention + ", вы успешно оставили своё обращение! Перейдите в канал " + channel2.mention + " для просмотра ответа.")
     await asyncio.sleep(5)
@@ -124,12 +124,12 @@ async def on_message(message):
 @Bot.command( pass_context=True )
 async def embed(ctx):
     if ctx.message.author.guild_permissions.administrator:
-        emb1 = discord.Embed( title="Тех.Поддержка сервера HiMan", colour=0xff8c00 ) # Создаем ембед
+        emb1 = discord.Embed( title="Тех.Поддержка сервера PWNZ", colour=0xff8c00 ) # Создаем ембед
         emb1.add_field( name='Правила подачи обращения', value='```1) Запрещено отправлять оскорбительные сообщения\n2) Запрещено отправлять сообщения с непристойным материалом\n3) Запрещено создавать обращения без причины```', inline=False)
         emb1.add_field( name='Всего', value='`обработанных обращений:` ?', inline=True)
         emb1.add_field( name='Всего', value='`обращений на рассмотрении:` ?', inline=True)
         emb1.add_field( name='Всего', value='`закрытых обращений:` ?', inline=True)
-        emb1.set_footer(text= "© HiMan Support | Тех.Поддержка")
+        emb1.set_footer(text= "© PWNZ Support | Тех.Поддержка")
         emb1.set_image( url='https://images-ext-2.discordapp.net/external/cQxwDjOv26SB4UNSoL58YRtmhJFOediiOfT8tVSqAGw/https/images-ext-2.discordapp.net/external/uxj2OXVnN-UuIlbnrx9bTD7aYuLJoUmSC8uInIL9b9Q/https/images-ext-2.discordapp.net/external/RoNgImbrFiwy16IZVStGaUy4ZZrJPSuVcRN1r7l-SQY/https/imgur.com/LKDbJeM.gif' )
         emb1.timestamp = datetime.datetime.utcnow()
         await ctx.send( embed = emb1)
