@@ -75,7 +75,7 @@ async def suggest( ctx, *, suggest = None):
 # Закрытие канала
 @Bot.command( pass_context=True )
 async def close(ctx):
-    role = discord.utils.get(ctx.guild.roles, id=870960033578508299)
+    role = discord.utils.get(ctx.guild.roles, id=870959126929358858)
     if role not in ctx.author.roles:
         await ctx.send(":x: | Вы не состоите в **Support Team**!")
     else:
@@ -114,7 +114,7 @@ async def on_message(message):
     emb.set_author(name="Обращение к команде поддержки")
     emb.set_footer(text=f"{message.author.display_name}", icon_url = message.author.avatar_url)
     emb.add_field( name = 'Суть обращения:', value = '{}'.format(message.content) )
-    await channel2.send(message.author.mention+", **`для команды поддержки`** <@&870960033578508299>")
+    await channel2.send(message.author.mention+", **`для команды поддержки`** <@&870959126929358858>")
     await channel2.send(embed=emb)
     #message2 = await channel.send(message.author.mention + ", вы успешно оставили своё обращение! Перейдите в канал " + channel2.mention + " для просмотра ответа.")
     await asyncio.sleep(5)
