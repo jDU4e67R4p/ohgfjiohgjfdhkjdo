@@ -1,0 +1,7 @@
+discord-py
+asyncio
+datetime
+Cybernator
+six
+pyowm
+pyshorteners
