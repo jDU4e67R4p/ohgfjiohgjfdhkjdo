@@ -301,7 +301,6 @@ async def help( ctx, amount = 1 ):
     emb2.set_thumbnail( url='https://cdn.discordapp.com/attachments/724886353065803778/766295281406181437/1abb1364301a30c7.png' )
     emb2.add_field( name = '``{}clear``'.format( PREFIX ), value = 'Очистка чата.' )
     emb2.add_field( name = '``{}suggest``'.format( PREFIX ), value = 'Предложить идею серверу.' )
-    emb2.add_field( name = '``{}ticket``'.format( PREFIX ), value = 'Задать свой вопрос в поддержку.' )
     emb3=discord.Embed( title = 'Навигация по командам :pushpin:', colour= 0x04ff00 )
     emb3.set_thumbnail( url='https://cdn.discordapp.com/attachments/724886353065803778/766295277001768990/e2104f40da530197.png' )
     emb3.add_field( name = '``{}passgen``'.format( PREFIX ), value= 'Сгенерировать сложный пароль.' )
